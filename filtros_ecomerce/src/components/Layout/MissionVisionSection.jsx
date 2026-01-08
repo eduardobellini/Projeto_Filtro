@@ -1,11 +1,20 @@
 import React from "react";
 import { Target, Eye, Sparkles, Droplets, Award } from "lucide-react";
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 export default function MissionVisionSection() {
-  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2, once: false });
-  const [missionRef, missionVisible] = useScrollAnimation({ threshold: 0.2, once: false });
-  const [visionRef, visionVisible] = useScrollAnimation({ threshold: 0.2, once: false });
+  const [headerRef, headerVisible] = useScrollAnimation({
+    threshold: 0.2,
+    once: false,
+  });
+  const [missionRef, missionVisible] = useScrollAnimation({
+    threshold: 0.2,
+    once: false,
+  });
+  const [visionRef, visionVisible] = useScrollAnimation({
+    threshold: 0.2,
+    once: false,
+  });
 
   return (
     <section className="relative bg-gradient-to-b from-white via-blue-50 to-white py-12 sm:py-16 md:py-20 overflow-hidden">
@@ -13,10 +22,12 @@ export default function MissionVisionSection() {
       <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div 
+        <div
           ref={headerRef}
           className={`text-center mb-12 sm:mb-16 md:mb-20 transition-all duration-1000 ${
-            headerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            headerVisible
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-10"
           }`}
         >
           <div className="inline-flex items-center justify-center space-x-2 mb-3 sm:mb-4">
@@ -34,10 +45,12 @@ export default function MissionVisionSection() {
           </h2>
         </div>
 
-        <div 
+        <div
           ref={missionRef}
           className={`mb-16 sm:mb-20 md:mb-24 transition-all duration-1000 delay-200 ${
-            missionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+            missionVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 -translate-x-10"
           }`}
         >
           <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 rounded-2xl sm:rounded-3xl p-0.5 sm:p-1 shadow-xl">
@@ -84,10 +97,12 @@ export default function MissionVisionSection() {
           </div>
         </div>
 
-        <div 
+        <div
           ref={visionRef}
           className={`mb-16 sm:mb-20 md:mb-24 transition-all duration-1000 delay-200 ${
-            visionVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
+            visionVisible
+              ? "opacity-100 translate-x-0"
+              : "opacity-0 translate-x-10"
           }`}
         >
           <div className="bg-gradient-to-br from-indigo-500 via-blue-600 to-blue-700 rounded-2xl sm:rounded-3xl p-0.5 sm:p-1 shadow-xl">

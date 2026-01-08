@@ -1,14 +1,14 @@
 import React from "react";
-import useScrollAnimation from '../../hooks/useScrollAnimation';
+import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 export default function HeroSection() {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2, once: false });
 
   return (
-    <section 
+    <section
       ref={ref}
       className={`relative bg-gradient-to-r from-indigo-900 via-blue-700 to-blue-600 text-white overflow-hidden transition-all duration-1000 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">

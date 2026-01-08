@@ -9,7 +9,7 @@ export default function useScrollAnimation(options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Opcional: parar de observar após aparecer
+         
           if (options.once !== false) {
             observer.unobserve(entry.target);
           }
