@@ -1,5 +1,6 @@
 import React from "react";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
+import logo from "../../assets/capital filtros logo.png";
 
 export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
   return (
@@ -7,11 +8,11 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           <div className="flex items-center flex-shrink-0">
-            <div className="w-28 h-9 sm:w-32 sm:h-10 md:w-40 md:h-12 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-xs sm:text-sm font-bold text-gray-600">
-                CAPITAL FILTROS
-              </span>
-            </div>
+            <img 
+              src={logo} 
+              alt="Capital Filtros" 
+              className="w-28 h-9 sm:w-32 sm:h-10 md:w-40 md:h-12 object-contain"
+            />
           </div>
 
           <div className="hidden md:flex flex-1 max-w-md mx-4 lg:mx-8">

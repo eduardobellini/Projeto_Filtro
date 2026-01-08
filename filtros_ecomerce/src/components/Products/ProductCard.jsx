@@ -12,15 +12,23 @@ export default function ProductCard({ product, favorites, setFavorites }) {
 
   return (
     <div className="group bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
-      <div className="relative bg-gray-50 h-56 sm:h-60 md:h-64 flex items-center justify-center">
-        <div className="w-32 h-48 sm:w-36 sm:h-52 md:w-40 md:h-56 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
-              <span className="text-xs text-gray-400">IBBL</span>
+      <div className="relative bg-gray-50 h-56 sm:h-60 md:h-64 flex items-center justify-center p-4">
+        {product.image ? (
+          <img 
+            src={product.image} 
+            alt={product.name}
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <div className="w-32 h-48 sm:w-36 sm:h-52 md:w-40 md:h-56 bg-gradient-to-b from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
+            <div className="text-center">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                <span className="text-xs text-gray-400">IBBL</span>
+              </div>
+              <div className="w-12 h-24 sm:w-14 sm:h-28 md:w-16 md:h-32 bg-blue-100 rounded-lg mx-auto"></div>
             </div>
-            <div className="w-12 h-24 sm:w-14 sm:h-28 md:w-16 md:h-32 bg-blue-100 rounded-lg mx-auto"></div>
           </div>
-        </div>
+        )}
 
         <button
           onClick={toggleFavorite}

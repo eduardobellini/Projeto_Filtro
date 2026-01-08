@@ -1,5 +1,6 @@
 import React from "react";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import waterPurifier from "../../assets/water purifier.png";
 
 export default function HeroSection() {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.2, once: false });
@@ -27,12 +28,12 @@ export default function HeroSection() {
           </div>
 
           <div className="relative flex justify-center items-center mt-8 lg:mt-0">
-            <div className="w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-96 lg:w-80 lg:h-96 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center">
-              <div className="w-40 h-52 sm:w-44 sm:h-56 md:w-48 md:h-64 bg-white/20 rounded-2xl flex items-center justify-center">
-                <span className="text-xs sm:text-sm opacity-50">
-                  Water Purifier
-                </span>
-              </div>
+            <div className="w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-96 lg:w-80 lg:h-96 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center p-4">
+              <img 
+                src={waterPurifier} 
+                alt="Water Purifier" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>

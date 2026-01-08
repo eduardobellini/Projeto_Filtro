@@ -2,6 +2,9 @@ import React from "react";
 import { Heart } from "lucide-react";
 import ProductCard from "./ProductCard";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
+import purificador1 from "../../assets/purificador de agua ibl.png";
+import purificador2 from "../../assets/purificador_teste2 (1) 1.png";
+import purificador3 from "../../assets/water purifier.png";
 
 export default function ProductsSection({
   activeTab,
@@ -24,22 +27,25 @@ export default function ProductsSection({
       discount: "31% OFF",
       price: "R$169,82",
       installment: "Ou 12x de 69,90 sem juros",
+      image: purificador1,
     },
     {
       id: 2,
-      name: "Purificador de Água IBBL Vivax Branco",
+      name: "Purificador de Água IBBL Premium",
       originalPrice: "R$ 250,00",
       discount: "31% OFF",
       price: "R$169,82",
       installment: "Ou 12x de 69,90 sem juros",
+      image: purificador2,
     },
     {
       id: 3,
-      name: "Purificador de Água IBBL Vivax Branco",
+      name: "Purificador de Água Avançado",
       originalPrice: "R$ 250,00",
       discount: "31% OFF",
       price: "R$169,82",
       installment: "Ou 12x de 69,90 sem juros",
+      image: purificador3,
     },
   ];
 
