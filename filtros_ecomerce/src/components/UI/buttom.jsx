@@ -15,24 +15,10 @@ function ToastNotification() {
   };
 
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      minHeight: '100vh' 
-    }}>
+    <div className="flex justify-center items-center min-h-screen">
       <button 
         onClick={showToast}
-        style={{
-          padding: '12px 24px',
-          fontSize: '16px',
-          backgroundColor: '#4CAF50',
-          color: 'white',
-          border: 'none',
-          borderRadius: '8px',
-          cursor: 'pointer',
-          fontWeight: 'bold'
-        }}
+        className="px-6 py-3 text-base bg-green-500 text-white border-none rounded-lg cursor-pointer font-bold hover:bg-green-600 transition-colors"
       >
         Mostrar Notificação
       </button>
