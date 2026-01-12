@@ -28,7 +28,7 @@ export default function HeroSection() {
           </div>
 
           <div className="relative flex justify-center items-center mt-8 lg:mt-0">
-            <div className="w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-96 lg:w-80 lg:h-96 bg-white/10 backdrop-blur-sm rounded-3xl flex items-center justify-center p-4">
+            <div className="w-64 h-80 sm:w-72 sm:h-[22rem] md:w-80 md:h-96 lg:w-80 lg:h-96 backdrop-blur-sm rounded-3xl flex items-center justify-center p-4">
               <img 
                 src={waterPurifier} 
                 alt="Water Purifier" 
