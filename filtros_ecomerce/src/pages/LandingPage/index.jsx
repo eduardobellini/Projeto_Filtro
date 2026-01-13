@@ -33,6 +33,7 @@ export default function LandingPage() {
         <Header
           mobileMenuOpen={mobileMenuOpen}
           setMobileMenuOpen={setMobileMenuOpen}
+          sticky={true}
         />
 
         <HeroSection />

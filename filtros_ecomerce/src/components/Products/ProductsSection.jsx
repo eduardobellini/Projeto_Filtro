@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import ProductCard from "./ProductCard";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
@@ -13,11 +13,24 @@ export default function ProductsSection({
   setFavorites,
 }) {
   const [ref, isVisible] = useScrollAnimation({ threshold: 0.1, once: false });
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
+  const tabRefs = useRef({});
+  
   const tabs = [
     { id: "novos", label: "Novos na loja" },
     { id: "vendidos", label: "Mais Vendidos" },
     { id: "destaque", label: "Produtos em Destaque" },
   ];
+
+  useEffect(() => {
+    const activeTabElement = tabRefs.current[activeTab];
+    if (activeTabElement) {
+      setIndicatorStyle({
+        left: activeTabElement.offsetLeft,
+        width: activeTabElement.offsetWidth,
+      });
+    }
+  }, [activeTab]);
 
   const products = [
     {
@@ -56,20 +69,28 @@ export default function ProductsSection({
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
-      <div className="flex flex-wrap sm:flex-nowrap space-x-4 sm:space-x-8 border-b border-gray-200 mb-6 sm:mb-8 overflow-x-auto">
+      <div className="relative flex flex-wrap sm:flex-nowrap space-x-4 sm:space-x-8 border-b border-gray-200 mb-6 sm:mb-8 overflow-x-auto">
         {tabs.map((tab) => (
           <button
             key={tab.id}
+            ref={(el) => (tabRefs.current[tab.id] = el)}
             onClick={() => setActiveTab(tab.id)}
-            className={`pb-3 sm:pb-4 px-2 font-medium transition-all whitespace-nowrap text-sm sm:text-base ${
+            className={`pb-3 sm:pb-4 px-2 font-medium transition-colors whitespace-nowrap text-sm sm:text-base ${
               activeTab === tab.id
-                ? "text-gray-900 border-b-2 border-gray-900"
+                ? "text-gray-900"
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
             {tab.label}
           </button>
         ))}
+        <div
+          className="absolute bottom-0 h-0.5 bg-gray-900 transition-all duration-300 ease-out"
+          style={{
+            left: `${indicatorStyle.left}px`,
+            width: `${indicatorStyle.width}px`,
+          }}
+        />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">

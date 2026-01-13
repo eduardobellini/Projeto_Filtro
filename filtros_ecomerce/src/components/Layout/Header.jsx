@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Search, ShoppingCart, User, Menu, X } from "lucide-react";
 import logo from "../../assets/capital filtros logo.png";
 
-export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
+export default function Header({ mobileMenuOpen, setMobileMenuOpen, sticky = false }) {
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className={`bg-white border-b border-gray-200 ${sticky ? 'sticky top-0' : ''} z-50`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           <div className="flex items-center flex-shrink-0">
@@ -27,18 +28,18 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
           </div>
 
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="text-sm xl:text-base text-gray-900 font-medium hover:text-blue-600 transition-colors"
             >
               Início
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/produtos"
               className="text-sm xl:text-base text-gray-500 hover:text-blue-600 transition-colors"
             >
               Produtos
-            </a>
+            </Link>
             <a
               href="#"
               className="text-sm xl:text-base text-gray-500 hover:text-blue-600 transition-colors"
@@ -54,9 +55,9 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
           </nav>
 
           <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-            <button className="text-gray-600 hover:text-blue-600 p-1 sm:p-2">
+            <Link to="/carrinho" className="text-gray-600 hover:text-blue-600 p-1 sm:p-2">
               <ShoppingCart className="h-5 w-5 sm:h-6 sm:w-6" />
-            </button>
+            </Link>
             <button className="text-gray-600 hover:text-blue-600 p-1 sm:p-2">
               <User className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
@@ -87,15 +88,15 @@ export default function Header({ mobileMenuOpen, setMobileMenuOpen }) {
         {mobileMenuOpen && (
           <nav className="lg:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-3">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-gray-900 font-medium hover:text-blue-600 py-2"
               >
                 Início
-              </a>
-              <a href="#" className="text-gray-500 hover:text-blue-600 py-2">
+              </Link>
+              <Link to="/produtos" className="text-gray-500 hover:text-blue-600 py-2">
                 Produtos
-              </a>
+              </Link>
               <a href="#" className="text-gray-500 hover:text-blue-600 py-2">
                 Sobre nós
               </a>

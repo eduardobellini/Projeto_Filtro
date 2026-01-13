@@ -14,7 +14,6 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      
       <div className="fixed inset-0 z-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
@@ -24,11 +23,9 @@ export default function LandingPage() {
           }}
         ></div>
 
-        
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-blue-50/30 to-white/50"></div>
       </div>
 
-      
       <div className="relative z-10">
         <Header
           mobileMenuOpen={mobileMenuOpen}

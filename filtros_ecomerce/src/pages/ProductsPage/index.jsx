@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Search, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "../../components/Layout/Header";
+import Footer from "../../components/Layout/Footer";
 import ProductCard from "../../components/Products/ProductCard";
 
 export default function ProductsPage() {
@@ -102,6 +103,7 @@ export default function ProductsPage() {
       <Header
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
+        sticky={false}
       />
 
       <div className="bg-white border-b border-gray-200">
@@ -248,6 +250,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
